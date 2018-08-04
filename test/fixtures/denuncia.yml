@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechaDelDelito: 2018-07-30 20:26:55
+  lugarDelDelito: MyString
+  descripcionDelDelito: MyString
+  nombreDelDenunciante: MyString
+
+two:
+  fechaDelDelito: 2018-07-30 20:26:55
+  lugarDelDelito: MyString
+  descripcionDelDelito: MyString
+  nombreDelDenunciante: MyString

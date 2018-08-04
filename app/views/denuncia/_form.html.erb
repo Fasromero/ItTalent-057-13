@@ -1,0 +1,37 @@
+<%= form_with(model: denuncium, local: true) do |form| %>
+  <% if denuncium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(denuncium.errors.count, "error") %> prohibited this denuncium from being saved:</h2>
+
+      <ul>
+      <% denuncium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+     <label>Fecha del delito</label>   
+    <%= form.datetime_select :fechaDelDelito, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <label>Lugar del delito</label>
+    <%= form.text_field :lugarDelDelito, class: 'form-control' %>
+  </div>
+
+  <div class="field textarea  form-group">
+    <label>Descripcion del delito</label>
+    <%= form.text_area :descripcionDelDelito, cols:40, rows:5, class: 'form-control' %>
+  </div>
+
+  <div class="field  form-group">
+    <label>Nombre del denunciante</label>
+    <%= form.text_field :nombreDelDenunciante, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Denunciar', class:'btn btn-primary' %>
+  </div>
+<% end %>

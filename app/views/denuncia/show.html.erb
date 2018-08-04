@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card text-center">
+  <div class="card-header">
+    Fecha del delito:  <%= @denuncium.fechaDelDelito.to_formatted_s(:long) %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> <%= @denuncium.lugarDelDelito %></h5>
+    <p class="card-text"> <%= @denuncium.descripcionDelDelito %></p>
+    <button class="btn btn-primary">Me asusta</button>
+  </div>
+  <div class="card-footer text-muted">
+  <%= @denuncium.nombreDelDenunciante %>
+  </div>
+</div>
+
+<%= link_to 'Modificar', edit_denuncium_path(@denuncium) %> |
+<%= link_to 'Ver todas las denuncias', denuncia_path %>

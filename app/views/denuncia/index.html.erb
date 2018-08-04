@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Denuncias </h1>
+<div class="pull-left">
+<%= link_to 'Agregar denuncia', new_denuncium_path, class:'btn btn-basic' %>
+</div>
+
+<table class="table">
+  <col width="20%">
+  <col width="20%">
+  <col width="20%">
+  <col width="20%">
+  <thead class="thead-dark">
+    <tr>
+      <th>Fecha del delito</th>
+      <th>Lugar del delito</th>
+      <th>Descripcion del delito</th>
+      <th>Nombre del denunciante</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @denuncia.each do |denuncium| %>
+      <tr>
+        <td><%= denuncium.fechaDelDelito.to_formatted_s(:long) %></td>
+        <td><%= denuncium.lugarDelDelito %></td>
+        <td><%= denuncium.descripcionDelDelito %></td>
+        <td><%= denuncium.nombreDelDenunciante %></td>
+        <td><%= link_to 'Ver', denuncium %></td>
+        <td><%= link_to 'Modificar', edit_denuncium_path(denuncium) %></td>
+        <td><%= link_to 'Eliminar', denuncium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
